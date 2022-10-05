@@ -1,12 +1,14 @@
-from os.path import exists
-from os import remove
-import webbrowser
+#!/usr/bin/env python3
+
+from os.path import exists, expanduser
+from os import remove, system
 from pdf2image import convert_from_path
 import PySimpleGUI as sg
 
 # Variables
-fileName = 'paths.txt'
-subjectFile = 'subjects.txt'
+homePath = expanduser('~')
+fileName = homePath + '/Documents/Scripts/assets/paths.txt'
+subjectFile = homePath + '/Documents/Scripts/assets/subjects.txt'
 exportPath = '/assets/'
 selectedSubject = ''
 pages = ['home', 'name', 'open']
@@ -72,6 +74,7 @@ def getParentFolder():
         path = strings[0]
         if path[-1:] != '/':
             path += '/'
+            print(path)
         return path
     return ''
 
@@ -144,7 +147,7 @@ layout = [  [sg.Column(page0, key=pages[0]),
             sg.Column(page2, key=pages[2], visible=False),
             ] ]
 
-window = sg.Window('School Manager', layout, icon='./recycling.png')
+window = sg.Window('School Manager', layout, icon='~/Pictures/Icons/module_icon.png')
 
 while True:
     export = False
@@ -179,11 +182,11 @@ while True:
             switchPage('open')
 
     if event == 'Heft':
-        webbrowser.open(getParentFolder() + selectedSubject + '/_Heft-' + selectedSubject + '.xopp')
+        system('xdg-open "' + getParentFolder() + selectedSubject + '/_Heft-' + selectedSubject + '.xopp"')
         switchPage('home')
 
     if event == 'Übungen':
-        webbrowser.open(getParentFolder() + selectedSubject + '/_Übungen-' + selectedSubject + '.xopp')
+        system('xdg-open "' + getParentFolder() + selectedSubject + '/_Übungen-' + selectedSubject + '.xopp"')
         switchPage('home')
         
 

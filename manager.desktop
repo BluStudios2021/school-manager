@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=SchoolManager
+Icon=/home/jneft/Pictures/Icons/module_icon.png
+Exec=/home/jneft/Documents/Scripts/schoolManager.sh
+Categories=Application
