@@ -116,7 +116,9 @@ subjects = getSubjects()
 
 # main page
 
-page0 = [   [sg.Text('Open Subject')],
+page0 = [   [sg.Text('Open Timetable')],
+            [sg.Button('Timetable', expand_x=True)],
+            [sg.Text('Open Subject')],
             createSubjectButtons('open', '[', ']'),
             [sg.Text('')],
             [sg.Text('Import pdf file')],
@@ -170,7 +172,7 @@ while True:
             sg.popup('The specified PDF file does not exist!', title='Wrong Input')
 
     # swiches back to first page
-    if event in ['Back', 'Back0']:
+    if event in ['Back', 'Back0', 'Back1']:
         switchPage(lastPage)
     
     for subject in subjects:
@@ -188,7 +190,9 @@ while True:
     if event == 'Übungen':
         system('xdg-open "' + getParentFolder() + selectedSubject + '/_Übungen-' + selectedSubject + '.xopp"')
         switchPage('home')
-        
+
+    if event == 'Timetable':
+        system('xdg-open "' + getParentFolder() + 'Stundenplan.png"')
 
     # Exports the Images
     if export:
