@@ -1,1 +1,1 @@
-/home/jneft/Documents/Schule/,Chemie,Deutsch,Englisch,Geschichte,Kunst,Mathe,P-Seminar,Religion,Sozialkunde,Sport,Wirtschaft,W-Seminar
+/home/jneft/Documents/Schule/,Chemie,Deutsch,Englisch,Geschichte,Kunst,Mathe,P-Seminar,Religion,Sozialkunde,Bus-Englisch,Wirtschaft,W-Seminar
